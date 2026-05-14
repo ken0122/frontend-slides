@@ -1,0 +1,1006 @@
+{
+  "generatedAt": "2026-05-14T10:38:50.374Z",
+  "totals": {
+    "cases": 3
+  },
+  "metrics": {
+    "withSkillPassRate": 1,
+    "withoutSkillPassRate": 0,
+    "withSkillAverageQualityScore": 10,
+    "withoutSkillAverageQualityScore": 3
+  },
+  "rows": [
+    {
+      "id": "mode-a-zero-sales-proposal",
+      "prompt": "Create a polished pre-sales HTML slide deck for a municipal AI service proposal, with responsive 100vh slides and browser navigation.",
+      "expected_mode": "A",
+      "withSkill": {
+        "path": "examples/regression/zero-sales-proposal.html",
+        "summary": {
+          "ok": true,
+          "viewportPassRate": 1,
+          "failureCount": 0,
+          "fullSpecIssueCount": 0,
+          "qualityScore": 10
+        },
+        "failures": []
+      },
+      "withoutSkill": {
+        "path": "examples/baseline/zero-sales-proposal.html",
+        "summary": {
+          "ok": false,
+          "viewportPassRate": 0,
+          "failureCount": 56,
+          "fullSpecIssueCount": 32,
+          "qualityScore": 3
+        },
+        "failures": [
+          {
+            "viewport": "desktop-1080p",
+            "failures": [
+              {
+                "check": "slide-overflow",
+                "slide": 1,
+                "message": "height 1225px does not match viewport 1080px"
+              },
+              {
+                "check": "slide-overflow",
+                "slide": 1,
+                "message": "overflow is \"visible\", expected \"hidden\""
+              },
+              {
+                "check": "slide-overflow",
+                "slide": 2,
+                "message": "height 1225px does not match viewport 1080px"
+              },
+              {
+                "check": "slide-overflow",
+                "slide": 2,
+                "message": "overflow is \"visible\", expected \"hidden\""
+              },
+              {
+                "check": "slide-overflow",
+                "slide": 3,
+                "message": "height 1225px does not match viewport 1080px"
+              },
+              {
+                "check": "slide-overflow",
+                "slide": 3,
+                "message": "overflow is \"visible\", expected \"hidden\""
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No .reveal elements found for progressive slide content."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No .slide.visible state found; first render can appear blank when reveal elements are hidden."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "First .slide is not marked visible on initial load."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No progress bar element or runtime progress marker found."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No IntersectionObserver runtime found for .visible slide state updates."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No touch or pointer swipe support found."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No prefers-reduced-motion CSS fallback found."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "Viewport meta should include maximum-scale=1.0,user-scalable=no for mobile deck stability."
+              }
+            ]
+          },
+          {
+            "viewport": "desktop-900p",
+            "failures": [
+              {
+                "check": "slide-overflow",
+                "slide": 1,
+                "message": "height 1045px does not match viewport 900px"
+              },
+              {
+                "check": "slide-overflow",
+                "slide": 1,
+                "message": "overflow is \"visible\", expected \"hidden\""
+              },
+              {
+                "check": "slide-overflow",
+                "slide": 2,
+                "message": "height 1045px does not match viewport 900px"
+              },
+              {
+                "check": "slide-overflow",
+                "slide": 2,
+                "message": "overflow is \"visible\", expected \"hidden\""
+              },
+              {
+                "check": "slide-overflow",
+                "slide": 3,
+                "message": "height 1045px does not match viewport 900px"
+              },
+              {
+                "check": "slide-overflow",
+                "slide": 3,
+                "message": "overflow is \"visible\", expected \"hidden\""
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No .reveal elements found for progressive slide content."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No .slide.visible state found; first render can appear blank when reveal elements are hidden."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "First .slide is not marked visible on initial load."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No progress bar element or runtime progress marker found."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No IntersectionObserver runtime found for .visible slide state updates."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No touch or pointer swipe support found."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No prefers-reduced-motion CSS fallback found."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "Viewport meta should include maximum-scale=1.0,user-scalable=no for mobile deck stability."
+              }
+            ]
+          },
+          {
+            "viewport": "mobile-portrait",
+            "failures": [
+              {
+                "check": "slide-overflow",
+                "slide": 1,
+                "message": "height 812px does not match viewport 667px"
+              },
+              {
+                "check": "slide-overflow",
+                "slide": 1,
+                "message": "overflow is \"visible\", expected \"hidden\""
+              },
+              {
+                "check": "slide-overflow",
+                "slide": 2,
+                "message": "height 812px does not match viewport 667px"
+              },
+              {
+                "check": "slide-overflow",
+                "slide": 2,
+                "message": "overflow is \"visible\", expected \"hidden\""
+              },
+              {
+                "check": "slide-overflow",
+                "slide": 3,
+                "message": "height 812px does not match viewport 667px"
+              },
+              {
+                "check": "slide-overflow",
+                "slide": 3,
+                "message": "overflow is \"visible\", expected \"hidden\""
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No .reveal elements found for progressive slide content."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No .slide.visible state found; first render can appear blank when reveal elements are hidden."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "First .slide is not marked visible on initial load."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No progress bar element or runtime progress marker found."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No IntersectionObserver runtime found for .visible slide state updates."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No touch or pointer swipe support found."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No prefers-reduced-motion CSS fallback found."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "Viewport meta should include maximum-scale=1.0,user-scalable=no for mobile deck stability."
+              }
+            ]
+          },
+          {
+            "viewport": "mobile-landscape",
+            "failures": [
+              {
+                "check": "slide-overflow",
+                "slide": 1,
+                "message": "height 559px does not match viewport 414px"
+              },
+              {
+                "check": "slide-overflow",
+                "slide": 1,
+                "message": "overflow is \"visible\", expected \"hidden\""
+              },
+              {
+                "check": "slide-overflow",
+                "slide": 2,
+                "message": "height 559px does not match viewport 414px"
+              },
+              {
+                "check": "slide-overflow",
+                "slide": 2,
+                "message": "overflow is \"visible\", expected \"hidden\""
+              },
+              {
+                "check": "slide-overflow",
+                "slide": 3,
+                "message": "height 559px does not match viewport 414px"
+              },
+              {
+                "check": "slide-overflow",
+                "slide": 3,
+                "message": "overflow is \"visible\", expected \"hidden\""
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No .reveal elements found for progressive slide content."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No .slide.visible state found; first render can appear blank when reveal elements are hidden."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "First .slide is not marked visible on initial load."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No progress bar element or runtime progress marker found."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No IntersectionObserver runtime found for .visible slide state updates."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No touch or pointer swipe support found."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No prefers-reduced-motion CSS fallback found."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "Viewport meta should include maximum-scale=1.0,user-scalable=no for mobile deck stability."
+              }
+            ]
+          }
+        ]
+      },
+      "deltaQualityScore": 7
+    },
+    {
+      "id": "mode-b-pptx-converted",
+      "prompt": "Convert an uploaded PPTX into a responsive browser-native HTML presentation while preserving content order.",
+      "expected_mode": "B",
+      "withSkill": {
+        "path": "examples/regression/pptx-converted.html",
+        "summary": {
+          "ok": true,
+          "viewportPassRate": 1,
+          "failureCount": 0,
+          "fullSpecIssueCount": 0,
+          "qualityScore": 10
+        },
+        "failures": []
+      },
+      "withoutSkill": {
+        "path": "examples/baseline/pptx-converted.html",
+        "summary": {
+          "ok": false,
+          "viewportPassRate": 0,
+          "failureCount": 56,
+          "fullSpecIssueCount": 32,
+          "qualityScore": 3
+        },
+        "failures": [
+          {
+            "viewport": "desktop-1080p",
+            "failures": [
+              {
+                "check": "slide-overflow",
+                "slide": 1,
+                "message": "height 1208px does not match viewport 1080px"
+              },
+              {
+                "check": "slide-overflow",
+                "slide": 1,
+                "message": "overflow is \"visible\", expected \"hidden\""
+              },
+              {
+                "check": "slide-overflow",
+                "slide": 2,
+                "message": "height 1208px does not match viewport 1080px"
+              },
+              {
+                "check": "slide-overflow",
+                "slide": 2,
+                "message": "overflow is \"visible\", expected \"hidden\""
+              },
+              {
+                "check": "slide-overflow",
+                "slide": 3,
+                "message": "height 1208px does not match viewport 1080px"
+              },
+              {
+                "check": "slide-overflow",
+                "slide": 3,
+                "message": "overflow is \"visible\", expected \"hidden\""
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No .reveal elements found for progressive slide content."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No .slide.visible state found; first render can appear blank when reveal elements are hidden."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "First .slide is not marked visible on initial load."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No progress bar element or runtime progress marker found."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No IntersectionObserver runtime found for .visible slide state updates."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No touch or pointer swipe support found."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No prefers-reduced-motion CSS fallback found."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "Viewport meta should include maximum-scale=1.0,user-scalable=no for mobile deck stability."
+              }
+            ]
+          },
+          {
+            "viewport": "desktop-900p",
+            "failures": [
+              {
+                "check": "slide-overflow",
+                "slide": 1,
+                "message": "height 1028px does not match viewport 900px"
+              },
+              {
+                "check": "slide-overflow",
+                "slide": 1,
+                "message": "overflow is \"visible\", expected \"hidden\""
+              },
+              {
+                "check": "slide-overflow",
+                "slide": 2,
+                "message": "height 1028px does not match viewport 900px"
+              },
+              {
+                "check": "slide-overflow",
+                "slide": 2,
+                "message": "overflow is \"visible\", expected \"hidden\""
+              },
+              {
+                "check": "slide-overflow",
+                "slide": 3,
+                "message": "height 1028px does not match viewport 900px"
+              },
+              {
+                "check": "slide-overflow",
+                "slide": 3,
+                "message": "overflow is \"visible\", expected \"hidden\""
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No .reveal elements found for progressive slide content."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No .slide.visible state found; first render can appear blank when reveal elements are hidden."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "First .slide is not marked visible on initial load."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No progress bar element or runtime progress marker found."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No IntersectionObserver runtime found for .visible slide state updates."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No touch or pointer swipe support found."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No prefers-reduced-motion CSS fallback found."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "Viewport meta should include maximum-scale=1.0,user-scalable=no for mobile deck stability."
+              }
+            ]
+          },
+          {
+            "viewport": "mobile-portrait",
+            "failures": [
+              {
+                "check": "slide-overflow",
+                "slide": 1,
+                "message": "height 795px does not match viewport 667px"
+              },
+              {
+                "check": "slide-overflow",
+                "slide": 1,
+                "message": "overflow is \"visible\", expected \"hidden\""
+              },
+              {
+                "check": "slide-overflow",
+                "slide": 2,
+                "message": "height 795px does not match viewport 667px"
+              },
+              {
+                "check": "slide-overflow",
+                "slide": 2,
+                "message": "overflow is \"visible\", expected \"hidden\""
+              },
+              {
+                "check": "slide-overflow",
+                "slide": 3,
+                "message": "height 795px does not match viewport 667px"
+              },
+              {
+                "check": "slide-overflow",
+                "slide": 3,
+                "message": "overflow is \"visible\", expected \"hidden\""
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No .reveal elements found for progressive slide content."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No .slide.visible state found; first render can appear blank when reveal elements are hidden."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "First .slide is not marked visible on initial load."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No progress bar element or runtime progress marker found."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No IntersectionObserver runtime found for .visible slide state updates."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No touch or pointer swipe support found."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No prefers-reduced-motion CSS fallback found."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "Viewport meta should include maximum-scale=1.0,user-scalable=no for mobile deck stability."
+              }
+            ]
+          },
+          {
+            "viewport": "mobile-landscape",
+            "failures": [
+              {
+                "check": "slide-overflow",
+                "slide": 1,
+                "message": "height 542px does not match viewport 414px"
+              },
+              {
+                "check": "slide-overflow",
+                "slide": 1,
+                "message": "overflow is \"visible\", expected \"hidden\""
+              },
+              {
+                "check": "slide-overflow",
+                "slide": 2,
+                "message": "height 542px does not match viewport 414px"
+              },
+              {
+                "check": "slide-overflow",
+                "slide": 2,
+                "message": "overflow is \"visible\", expected \"hidden\""
+              },
+              {
+                "check": "slide-overflow",
+                "slide": 3,
+                "message": "height 542px does not match viewport 414px"
+              },
+              {
+                "check": "slide-overflow",
+                "slide": 3,
+                "message": "overflow is \"visible\", expected \"hidden\""
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No .reveal elements found for progressive slide content."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No .slide.visible state found; first render can appear blank when reveal elements are hidden."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "First .slide is not marked visible on initial load."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No progress bar element or runtime progress marker found."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No IntersectionObserver runtime found for .visible slide state updates."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No touch or pointer swipe support found."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No prefers-reduced-motion CSS fallback found."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "Viewport meta should include maximum-scale=1.0,user-scalable=no for mobile deck stability."
+              }
+            ]
+          }
+        ]
+      },
+      "deltaQualityScore": 7
+    },
+    {
+      "id": "mode-c-enhanced-existing-html",
+      "prompt": "Enhance an existing HTML slide deck so it fits all target viewports and supports visible navigation.",
+      "expected_mode": "C",
+      "withSkill": {
+        "path": "examples/regression/enhanced-existing.html",
+        "summary": {
+          "ok": true,
+          "viewportPassRate": 1,
+          "failureCount": 0,
+          "fullSpecIssueCount": 0,
+          "qualityScore": 10
+        },
+        "failures": []
+      },
+      "withoutSkill": {
+        "path": "examples/baseline/enhanced-existing.html",
+        "summary": {
+          "ok": false,
+          "viewportPassRate": 0,
+          "failureCount": 57,
+          "fullSpecIssueCount": 32,
+          "qualityScore": 3
+        },
+        "failures": [
+          {
+            "viewport": "desktop-1080p",
+            "failures": [
+              {
+                "check": "slide-overflow",
+                "slide": 1,
+                "message": "height 1192px does not match viewport 1080px"
+              },
+              {
+                "check": "slide-overflow",
+                "slide": 1,
+                "message": "overflow is \"visible\", expected \"hidden\""
+              },
+              {
+                "check": "slide-overflow",
+                "slide": 2,
+                "message": "height 1192px does not match viewport 1080px"
+              },
+              {
+                "check": "slide-overflow",
+                "slide": 2,
+                "message": "overflow is \"visible\", expected \"hidden\""
+              },
+              {
+                "check": "slide-overflow",
+                "slide": 3,
+                "message": "height 1192px does not match viewport 1080px"
+              },
+              {
+                "check": "slide-overflow",
+                "slide": 3,
+                "message": "overflow is \"visible\", expected \"hidden\""
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No .reveal elements found for progressive slide content."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No .slide.visible state found; first render can appear blank when reveal elements are hidden."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "First .slide is not marked visible on initial load."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No progress bar element or runtime progress marker found."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No IntersectionObserver runtime found for .visible slide state updates."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No touch or pointer swipe support found."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No prefers-reduced-motion CSS fallback found."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "Viewport meta should include maximum-scale=1.0,user-scalable=no for mobile deck stability."
+              }
+            ]
+          },
+          {
+            "viewport": "desktop-900p",
+            "failures": [
+              {
+                "check": "slide-overflow",
+                "slide": 1,
+                "message": "height 1012px does not match viewport 900px"
+              },
+              {
+                "check": "slide-overflow",
+                "slide": 1,
+                "message": "overflow is \"visible\", expected \"hidden\""
+              },
+              {
+                "check": "slide-overflow",
+                "slide": 2,
+                "message": "height 1012px does not match viewport 900px"
+              },
+              {
+                "check": "slide-overflow",
+                "slide": 2,
+                "message": "overflow is \"visible\", expected \"hidden\""
+              },
+              {
+                "check": "slide-overflow",
+                "slide": 3,
+                "message": "height 1012px does not match viewport 900px"
+              },
+              {
+                "check": "slide-overflow",
+                "slide": 3,
+                "message": "overflow is \"visible\", expected \"hidden\""
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No .reveal elements found for progressive slide content."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No .slide.visible state found; first render can appear blank when reveal elements are hidden."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "First .slide is not marked visible on initial load."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No progress bar element or runtime progress marker found."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No IntersectionObserver runtime found for .visible slide state updates."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No touch or pointer swipe support found."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No prefers-reduced-motion CSS fallback found."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "Viewport meta should include maximum-scale=1.0,user-scalable=no for mobile deck stability."
+              }
+            ]
+          },
+          {
+            "viewport": "mobile-portrait",
+            "failures": [
+              {
+                "check": "slide-overflow",
+                "slide": 1,
+                "message": "height 779px does not match viewport 667px"
+              },
+              {
+                "check": "slide-overflow",
+                "slide": 1,
+                "message": "overflow is \"visible\", expected \"hidden\""
+              },
+              {
+                "check": "slide-overflow",
+                "slide": 2,
+                "message": "height 779px does not match viewport 667px"
+              },
+              {
+                "check": "slide-overflow",
+                "slide": 2,
+                "message": "overflow is \"visible\", expected \"hidden\""
+              },
+              {
+                "check": "slide-overflow",
+                "slide": 2,
+                "message": "horizontal internal overflow: scrollWidth 413px > clientWidth 375px"
+              },
+              {
+                "check": "slide-overflow",
+                "slide": 3,
+                "message": "height 779px does not match viewport 667px"
+              },
+              {
+                "check": "slide-overflow",
+                "slide": 3,
+                "message": "overflow is \"visible\", expected \"hidden\""
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No .reveal elements found for progressive slide content."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No .slide.visible state found; first render can appear blank when reveal elements are hidden."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "First .slide is not marked visible on initial load."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No progress bar element or runtime progress marker found."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No IntersectionObserver runtime found for .visible slide state updates."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No touch or pointer swipe support found."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No prefers-reduced-motion CSS fallback found."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "Viewport meta should include maximum-scale=1.0,user-scalable=no for mobile deck stability."
+              }
+            ]
+          },
+          {
+            "viewport": "mobile-landscape",
+            "failures": [
+              {
+                "check": "slide-overflow",
+                "slide": 1,
+                "message": "height 526px does not match viewport 414px"
+              },
+              {
+                "check": "slide-overflow",
+                "slide": 1,
+                "message": "overflow is \"visible\", expected \"hidden\""
+              },
+              {
+                "check": "slide-overflow",
+                "slide": 2,
+                "message": "height 526px does not match viewport 414px"
+              },
+              {
+                "check": "slide-overflow",
+                "slide": 2,
+                "message": "overflow is \"visible\", expected \"hidden\""
+              },
+              {
+                "check": "slide-overflow",
+                "slide": 3,
+                "message": "height 526px does not match viewport 414px"
+              },
+              {
+                "check": "slide-overflow",
+                "slide": 3,
+                "message": "overflow is \"visible\", expected \"hidden\""
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No .reveal elements found for progressive slide content."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No .slide.visible state found; first render can appear blank when reveal elements are hidden."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "First .slide is not marked visible on initial load."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No progress bar element or runtime progress marker found."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No IntersectionObserver runtime found for .visible slide state updates."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No touch or pointer swipe support found."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "No prefers-reduced-motion CSS fallback found."
+              },
+              {
+                "check": "full-spec",
+                "slide": null,
+                "message": "Viewport meta should include maximum-scale=1.0,user-scalable=no for mobile deck stability."
+              }
+            ]
+          }
+        ]
+      },
+      "deltaQualityScore": 7
+    }
+  ]
+}

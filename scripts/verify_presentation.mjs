@@ -27,6 +27,8 @@ Checks:
   - first screen has visible content
   - every .slide has no internal overflow
   - keyboard, wheel, and visible nav controls move between slides
+  - full frontend-slides spec: reveal states, progress bar, touch support,
+    IntersectionObserver, reduced-motion CSS, and mobile viewport lock
 `;
 
 function parseArgs(argv) {
@@ -152,6 +154,7 @@ async function verifyViewport(page, url, viewport, timeout) {
 
   const firstScreen = await page.evaluate(firstScreenCheck);
   const slides = await page.evaluate(slideOverflowCheck);
+  const fullSpec = await page.evaluate(fullSpecCheck);
   const navigation = await navigationCheck(page);
 
   const failures = [];
@@ -182,6 +185,12 @@ async function verifyViewport(page, url, viewport, timeout) {
       message: issue,
     });
   }
+  for (const issue of fullSpec.issues) {
+    failures.push({
+      check: "full-spec",
+      message: issue,
+    });
+  }
 
   return {
     viewport,
@@ -190,6 +199,7 @@ async function verifyViewport(page, url, viewport, timeout) {
     firstScreen,
     slides,
     navigation,
+    fullSpec,
   };
 }
 
@@ -287,6 +297,84 @@ function slideOverflowCheck() {
   });
 
   return { slideCount: slides.length, slides };
+}
+
+function fullSpecCheck() {
+  const issues = [];
+  const slides = [...document.querySelectorAll(".slide")];
+  const revealElements = [...document.querySelectorAll(".reveal")];
+  const visibleSlides = slides.filter((slide) => slide.classList.contains("visible"));
+  const progressElement = document.querySelector(
+    ".progress-bar, .progress [role='progressbar'], [data-progress], .progress-fill"
+  );
+  const specRuntime = window.__frontendSlidesSpec || {};
+  const scriptText = [...document.scripts].map((script) => script.textContent || "").join("\n");
+  const styleParts = [...document.querySelectorAll("style")].map((style) => style.textContent || "");
+  for (const sheet of [...document.styleSheets]) {
+    try {
+      for (const rule of [...sheet.cssRules]) {
+        styleParts.push(rule.cssText || "");
+      }
+    } catch {
+      // Cross-origin stylesheets can deny cssRules access. Inline style tags are still checked.
+    }
+  }
+  const styleText = styleParts.join("\n");
+  const viewportMeta = document.querySelector("meta[name='viewport']")?.getAttribute("content") || "";
+
+  if (slides.length > 0 && revealElements.length === 0) {
+    issues.push("No .reveal elements found for progressive slide content.");
+  }
+  if (slides.length > 0 && visibleSlides.length === 0) {
+    issues.push("No .slide.visible state found; first render can appear blank when reveal elements are hidden.");
+  }
+  if (slides[0] && !slides[0].classList.contains("visible")) {
+    issues.push("First .slide is not marked visible on initial load.");
+  }
+
+  const visibleReveal = document.querySelector(".slide.visible .reveal");
+  if (visibleReveal) {
+    const style = getComputedStyle(visibleReveal);
+    if (Number(style.opacity) === 0 || style.visibility === "hidden" || style.display === "none") {
+      issues.push("Active slide reveal content is not visible.");
+    }
+  }
+
+  if (slides.length > 1 && !progressElement && specRuntime.progress !== true) {
+    issues.push("No progress bar element or runtime progress marker found.");
+  }
+
+  const hasIntersectionObserver =
+    specRuntime.intersectionObserver === true || /\bIntersectionObserver\b/.test(scriptText);
+  if (slides.length > 1 && !hasIntersectionObserver) {
+    issues.push("No IntersectionObserver runtime found for .visible slide state updates.");
+  }
+
+  const hasTouchSupport = specRuntime.touch === true || /touch(start|move|end)|pointer(up|down|move)/i.test(scriptText);
+  if (slides.length > 1 && !hasTouchSupport) {
+    issues.push("No touch or pointer swipe support found.");
+  }
+
+  const hasReducedMotion = specRuntime.reducedMotion === true || /prefers-reduced-motion/i.test(styleText);
+  if (!hasReducedMotion) {
+    issues.push("No prefers-reduced-motion CSS fallback found.");
+  }
+
+  if (!/maximum-scale\s*=\s*1(?:\.0)?/i.test(viewportMeta) || !/user-scalable\s*=\s*no/i.test(viewportMeta)) {
+    issues.push("Viewport meta should include maximum-scale=1.0,user-scalable=no for mobile deck stability.");
+  }
+
+  return {
+    ok: issues.length === 0,
+    issues,
+    revealCount: revealElements.length,
+    visibleSlideCount: visibleSlides.length,
+    hasProgress: Boolean(progressElement || specRuntime.progress === true),
+    hasIntersectionObserver,
+    hasTouchSupport,
+    hasReducedMotion,
+    viewportMeta,
+  };
 }
 
 async function navigationCheck(page) {

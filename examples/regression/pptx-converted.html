@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
     <title>Regression: PPTX Converted</title>
     <link rel="stylesheet" href="../../references/viewport-and-base.css">
     <link rel="stylesheet" href="assets/regression-common.css">
@@ -21,6 +21,7 @@
     </style>
 </head>
 <body>
+    <div class="progress" aria-hidden="true"><div class="progress-bar"></div></div>
     <nav class="nav-dots" aria-label="Slide navigation">
         <button type="button" aria-label="Slide 1"></button>
         <button type="button" aria-label="Slide 2"></button>
@@ -29,17 +30,17 @@
 
     <section class="slide visible">
         <div class="slide-content">
-            <div class="eyebrow">Mode B / PPTX conversion</div>
-            <h1>Partner Enablement Update</h1>
-            <p class="lede">Converted from a structured PPTX source into responsive browser slides while preserving titles, bullet hierarchy, and speaker-note intent.</p>
+            <div class="eyebrow reveal">Mode B / PPTX conversion</div>
+            <h1 class="reveal">Partner Enablement Update</h1>
+            <p class="lede reveal">Converted from a structured PPTX source into responsive browser slides while preserving titles, bullet hierarchy, and speaker-note intent.</p>
         </div>
     </section>
 
     <section class="slide">
         <div class="slide-content">
-            <div class="eyebrow">Extracted signals</div>
-            <h2>Three topics became three compact slides</h2>
-            <div class="metric-grid">
+            <div class="eyebrow reveal">Extracted signals</div>
+            <h2 class="reveal">Three topics became three compact slides</h2>
+            <div class="metric-grid reveal">
                 <div class="metric"><b>3</b><p>Source slides extracted into JSON.</p></div>
                 <div class="metric"><b>9</b><p>Bullet points normalized for web layout.</p></div>
                 <div class="metric"><b>4</b><p>Viewport checks required before delivery.</p></div>
@@ -49,11 +50,11 @@
 
     <section class="slide">
         <div class="slide-content split">
-            <div>
+            <div class="reveal">
                 <div class="eyebrow">Converted structure</div>
                 <h2>From office deck to browser deck</h2>
             </div>
-            <div class="panel-grid">
+            <div class="panel-grid reveal">
                 <div class="panel"><strong>Original title</strong><p>Used as the primary slide heading.</p></div>
                 <div class="panel"><strong>Body bullets</strong><p>Recomposed into panels and metrics.</p></div>
                 <div class="panel"><strong>Speaker note</strong><p>Kept as narrative intent for slide copy.</p></div>

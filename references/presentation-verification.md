@@ -33,8 +33,34 @@ The script opens the presentation in Chromium and verifies:
 - keyboard navigation moves between slides
 - wheel navigation moves between slides
 - any visible nav-dot or slide navigation control can be clicked
+- full frontend-slides runtime requirements:
+  - `.reveal` progressive content exists
+  - initial `.slide.visible` state exists
+  - progress bar exists
+  - `IntersectionObserver` or runtime marker exists
+  - touch/pointer swipe support exists
+  - `prefers-reduced-motion` fallback exists
+  - viewport meta includes `maximum-scale=1.0,user-scalable=no`
 
 Use `--json` for machine-readable output, or `--json-out verification.json` to save the full report.
+
+## Eval Loop
+
+Recall proxy eval:
+
+```bash
+node scripts/eval_skill_recall.mjs --report-out eval/reports/recall-report.md
+```
+
+End-to-end A/B eval:
+
+```bash
+node scripts/eval_e2e.mjs \
+  --report-out eval/reports/e2e-report.md \
+  --json-out eval/reports/e2e-report.json
+```
+
+The A/B eval uses with-skill regression examples and synthetic without-skill controls by default. Replace the `without_skill` paths in `eval/e2e-cases.json` when real no-skill generations are available.
 
 ## Regression Examples
 

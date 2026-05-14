@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
     <title>Regression: Enhanced Existing HTML</title>
     <link rel="stylesheet" href="../../references/viewport-and-base.css">
     <link rel="stylesheet" href="assets/regression-common.css">
@@ -21,6 +21,7 @@
     </style>
 </head>
 <body>
+    <div class="progress" aria-hidden="true"><div class="progress-bar"></div></div>
     <nav class="nav-dots" aria-label="Slide navigation">
         <button type="button" aria-label="Slide 1"></button>
         <button type="button" aria-label="Slide 2"></button>
@@ -29,19 +30,19 @@
 
     <section class="slide visible">
         <div class="slide-content">
-            <div class="eyebrow">Mode C / Enhanced HTML</div>
-            <h1>Operations Review</h1>
-            <p class="quote">The original file had static sections; this enhanced version adds viewport-safe slides, navigation, and a clearer executive arc.</p>
+            <div class="eyebrow reveal">Mode C / Enhanced HTML</div>
+            <h1 class="reveal">Operations Review</h1>
+            <p class="quote reveal">The original file had static sections; this enhanced version adds viewport-safe slides, navigation, and a clearer executive arc.</p>
         </div>
     </section>
 
     <section class="slide">
         <div class="slide-content split">
-            <div>
+            <div class="reveal">
                 <div class="eyebrow">Before to after</div>
                 <h2>Same content, sharper hierarchy</h2>
             </div>
-            <div class="panel-grid">
+            <div class="panel-grid reveal">
                 <div class="panel"><strong>Before</strong><p>Dense paragraphs and uneven spacing.</p></div>
                 <div class="panel"><strong>After</strong><p>Three slides with constrained density and reusable navigation.</p></div>
                 <div class="panel"><strong>Guardrail</strong><p>No added content is allowed to create internal slide scroll.</p></div>
@@ -51,9 +52,9 @@
 
     <section class="slide">
         <div class="slide-content">
-            <div class="eyebrow">Verification target</div>
-            <h2>Enhanced output must still behave like a deck</h2>
-            <div class="metric-grid">
+            <div class="eyebrow reveal">Verification target</div>
+            <h2 class="reveal">Enhanced output must still behave like a deck</h2>
+            <div class="metric-grid reveal">
                 <div class="metric"><b>0</b><p>Internal overflow findings expected.</p></div>
                 <div class="metric"><b>3</b><p>Navigation modes covered: keyboard, wheel, visible controls.</p></div>
                 <div class="metric"><b>4</b><p>Responsive viewports checked before handoff.</p></div>

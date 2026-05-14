@@ -4,6 +4,24 @@ body {
     color: var(--text-primary, #141414);
 }
 
+.progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 30;
+    width: 100%;
+    height: 0.25rem;
+    background: color-mix(in oklch, var(--accent, #8a4d1c), transparent 82%);
+}
+
+.progress-bar {
+    width: 0%;
+    height: 100%;
+    background: var(--accent, #8a4d1c);
+    transform-origin: left center;
+    transition: width 180ms ease;
+}
+
 .slide {
     background: var(--slide-bg, var(--deck-bg, #f6f3ed));
     color: var(--text-primary, #141414);
@@ -11,6 +29,17 @@ body {
 
 .slide-content {
     gap: var(--content-gap);
+}
+
+.reveal {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 240ms ease, transform 240ms ease;
+}
+
+.slide:not(.visible) .reveal {
+    opacity: 0;
+    transform: translateY(0.65rem);
 }
 
 .eyebrow {
@@ -144,5 +173,13 @@ li {
     .metric,
     .step {
         padding: 0.75rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .progress-bar,
+    .reveal {
+        transition-duration: 0.2s;
+        transform: none;
     }
 }
