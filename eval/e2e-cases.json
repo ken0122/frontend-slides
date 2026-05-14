@@ -1,0 +1,28 @@
+{
+  "description": "End-to-end A/B cases for frontend-slides. The without-skill artifacts are synthetic controls until real no-skill generations are collected.",
+  "verify_command": "node scripts/verify_presentation.mjs <artifact> --json",
+  "viewports": ["1920x1080", "1440x900", "375x667", "896x414"],
+  "cases": [
+    {
+      "id": "mode-a-zero-sales-proposal",
+      "prompt": "Create a polished pre-sales HTML slide deck for a municipal AI service proposal, with responsive 100vh slides and browser navigation.",
+      "expected_mode": "A",
+      "with_skill": "examples/regression/zero-sales-proposal.html",
+      "without_skill": "examples/baseline/zero-sales-proposal.html"
+    },
+    {
+      "id": "mode-b-pptx-converted",
+      "prompt": "Convert an uploaded PPTX into a responsive browser-native HTML presentation while preserving content order.",
+      "expected_mode": "B",
+      "with_skill": "examples/regression/pptx-converted.html",
+      "without_skill": "examples/baseline/pptx-converted.html"
+    },
+    {
+      "id": "mode-c-enhanced-existing-html",
+      "prompt": "Enhance an existing HTML slide deck so it fits all target viewports and supports visible navigation.",
+      "expected_mode": "C",
+      "with_skill": "examples/regression/enhanced-existing.html",
+      "without_skill": "examples/baseline/enhanced-existing.html"
+    }
+  ]
+}

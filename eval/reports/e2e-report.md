@@ -1,0 +1,204 @@
+# Frontend Slides E2E A/B Eval
+
+- Cases: 3
+- With-skill pass rate: 100.0%
+- Without-skill pass rate: 0.0%
+- With-skill average quality score: 10/10
+- Without-skill average quality score: 3/10
+
+> Without-skill artifacts are synthetic controls until real no-skill generations are collected. Replace the paths in eval/e2e-cases.json when real controls exist.
+
+| case | mode | with skill | score | without skill | score | delta |
+|---|---|---:|---:|---:|---:|---:|
+| mode-a-zero-sales-proposal | A | PASS | 10 | FAIL | 3 | 7.00 |
+| mode-b-pptx-converted | B | PASS | 10 | FAIL | 3 | 7.00 |
+| mode-c-enhanced-existing-html | C | PASS | 10 | FAIL | 3 | 7.00 |
+
+## Failure Detail
+
+### mode-a-zero-sales-proposal / withoutSkill
+- desktop-1080p:
+  - slide-overflow slide 1: height 1225px does not match viewport 1080px
+  - slide-overflow slide 1: overflow is "visible", expected "hidden"
+  - slide-overflow slide 2: height 1225px does not match viewport 1080px
+  - slide-overflow slide 2: overflow is "visible", expected "hidden"
+  - slide-overflow slide 3: height 1225px does not match viewport 1080px
+  - slide-overflow slide 3: overflow is "visible", expected "hidden"
+  - full-spec: No .reveal elements found for progressive slide content.
+  - full-spec: No .slide.visible state found; first render can appear blank when reveal elements are hidden.
+  - full-spec: First .slide is not marked visible on initial load.
+  - full-spec: No progress bar element or runtime progress marker found.
+  - full-spec: No IntersectionObserver runtime found for .visible slide state updates.
+  - full-spec: No touch or pointer swipe support found.
+  - full-spec: No prefers-reduced-motion CSS fallback found.
+  - full-spec: Viewport meta should include maximum-scale=1.0,user-scalable=no for mobile deck stability.
+- desktop-900p:
+  - slide-overflow slide 1: height 1045px does not match viewport 900px
+  - slide-overflow slide 1: overflow is "visible", expected "hidden"
+  - slide-overflow slide 2: height 1045px does not match viewport 900px
+  - slide-overflow slide 2: overflow is "visible", expected "hidden"
+  - slide-overflow slide 3: height 1045px does not match viewport 900px
+  - slide-overflow slide 3: overflow is "visible", expected "hidden"
+  - full-spec: No .reveal elements found for progressive slide content.
+  - full-spec: No .slide.visible state found; first render can appear blank when reveal elements are hidden.
+  - full-spec: First .slide is not marked visible on initial load.
+  - full-spec: No progress bar element or runtime progress marker found.
+  - full-spec: No IntersectionObserver runtime found for .visible slide state updates.
+  - full-spec: No touch or pointer swipe support found.
+  - full-spec: No prefers-reduced-motion CSS fallback found.
+  - full-spec: Viewport meta should include maximum-scale=1.0,user-scalable=no for mobile deck stability.
+- mobile-portrait:
+  - slide-overflow slide 1: height 812px does not match viewport 667px
+  - slide-overflow slide 1: overflow is "visible", expected "hidden"
+  - slide-overflow slide 2: height 812px does not match viewport 667px
+  - slide-overflow slide 2: overflow is "visible", expected "hidden"
+  - slide-overflow slide 3: height 812px does not match viewport 667px
+  - slide-overflow slide 3: overflow is "visible", expected "hidden"
+  - full-spec: No .reveal elements found for progressive slide content.
+  - full-spec: No .slide.visible state found; first render can appear blank when reveal elements are hidden.
+  - full-spec: First .slide is not marked visible on initial load.
+  - full-spec: No progress bar element or runtime progress marker found.
+  - full-spec: No IntersectionObserver runtime found for .visible slide state updates.
+  - full-spec: No touch or pointer swipe support found.
+  - full-spec: No prefers-reduced-motion CSS fallback found.
+  - full-spec: Viewport meta should include maximum-scale=1.0,user-scalable=no for mobile deck stability.
+- mobile-landscape:
+  - slide-overflow slide 1: height 559px does not match viewport 414px
+  - slide-overflow slide 1: overflow is "visible", expected "hidden"
+  - slide-overflow slide 2: height 559px does not match viewport 414px
+  - slide-overflow slide 2: overflow is "visible", expected "hidden"
+  - slide-overflow slide 3: height 559px does not match viewport 414px
+  - slide-overflow slide 3: overflow is "visible", expected "hidden"
+  - full-spec: No .reveal elements found for progressive slide content.
+  - full-spec: No .slide.visible state found; first render can appear blank when reveal elements are hidden.
+  - full-spec: First .slide is not marked visible on initial load.
+  - full-spec: No progress bar element or runtime progress marker found.
+  - full-spec: No IntersectionObserver runtime found for .visible slide state updates.
+  - full-spec: No touch or pointer swipe support found.
+  - full-spec: No prefers-reduced-motion CSS fallback found.
+  - full-spec: Viewport meta should include maximum-scale=1.0,user-scalable=no for mobile deck stability.
+
+### mode-b-pptx-converted / withoutSkill
+- desktop-1080p:
+  - slide-overflow slide 1: height 1208px does not match viewport 1080px
+  - slide-overflow slide 1: overflow is "visible", expected "hidden"
+  - slide-overflow slide 2: height 1208px does not match viewport 1080px
+  - slide-overflow slide 2: overflow is "visible", expected "hidden"
+  - slide-overflow slide 3: height 1208px does not match viewport 1080px
+  - slide-overflow slide 3: overflow is "visible", expected "hidden"
+  - full-spec: No .reveal elements found for progressive slide content.
+  - full-spec: No .slide.visible state found; first render can appear blank when reveal elements are hidden.
+  - full-spec: First .slide is not marked visible on initial load.
+  - full-spec: No progress bar element or runtime progress marker found.
+  - full-spec: No IntersectionObserver runtime found for .visible slide state updates.
+  - full-spec: No touch or pointer swipe support found.
+  - full-spec: No prefers-reduced-motion CSS fallback found.
+  - full-spec: Viewport meta should include maximum-scale=1.0,user-scalable=no for mobile deck stability.
+- desktop-900p:
+  - slide-overflow slide 1: height 1028px does not match viewport 900px
+  - slide-overflow slide 1: overflow is "visible", expected "hidden"
+  - slide-overflow slide 2: height 1028px does not match viewport 900px
+  - slide-overflow slide 2: overflow is "visible", expected "hidden"
+  - slide-overflow slide 3: height 1028px does not match viewport 900px
+  - slide-overflow slide 3: overflow is "visible", expected "hidden"
+  - full-spec: No .reveal elements found for progressive slide content.
+  - full-spec: No .slide.visible state found; first render can appear blank when reveal elements are hidden.
+  - full-spec: First .slide is not marked visible on initial load.
+  - full-spec: No progress bar element or runtime progress marker found.
+  - full-spec: No IntersectionObserver runtime found for .visible slide state updates.
+  - full-spec: No touch or pointer swipe support found.
+  - full-spec: No prefers-reduced-motion CSS fallback found.
+  - full-spec: Viewport meta should include maximum-scale=1.0,user-scalable=no for mobile deck stability.
+- mobile-portrait:
+  - slide-overflow slide 1: height 795px does not match viewport 667px
+  - slide-overflow slide 1: overflow is "visible", expected "hidden"
+  - slide-overflow slide 2: height 795px does not match viewport 667px
+  - slide-overflow slide 2: overflow is "visible", expected "hidden"
+  - slide-overflow slide 3: height 795px does not match viewport 667px
+  - slide-overflow slide 3: overflow is "visible", expected "hidden"
+  - full-spec: No .reveal elements found for progressive slide content.
+  - full-spec: No .slide.visible state found; first render can appear blank when reveal elements are hidden.
+  - full-spec: First .slide is not marked visible on initial load.
+  - full-spec: No progress bar element or runtime progress marker found.
+  - full-spec: No IntersectionObserver runtime found for .visible slide state updates.
+  - full-spec: No touch or pointer swipe support found.
+  - full-spec: No prefers-reduced-motion CSS fallback found.
+  - full-spec: Viewport meta should include maximum-scale=1.0,user-scalable=no for mobile deck stability.
+- mobile-landscape:
+  - slide-overflow slide 1: height 542px does not match viewport 414px
+  - slide-overflow slide 1: overflow is "visible", expected "hidden"
+  - slide-overflow slide 2: height 542px does not match viewport 414px
+  - slide-overflow slide 2: overflow is "visible", expected "hidden"
+  - slide-overflow slide 3: height 542px does not match viewport 414px
+  - slide-overflow slide 3: overflow is "visible", expected "hidden"
+  - full-spec: No .reveal elements found for progressive slide content.
+  - full-spec: No .slide.visible state found; first render can appear blank when reveal elements are hidden.
+  - full-spec: First .slide is not marked visible on initial load.
+  - full-spec: No progress bar element or runtime progress marker found.
+  - full-spec: No IntersectionObserver runtime found for .visible slide state updates.
+  - full-spec: No touch or pointer swipe support found.
+  - full-spec: No prefers-reduced-motion CSS fallback found.
+  - full-spec: Viewport meta should include maximum-scale=1.0,user-scalable=no for mobile deck stability.
+
+### mode-c-enhanced-existing-html / withoutSkill
+- desktop-1080p:
+  - slide-overflow slide 1: height 1192px does not match viewport 1080px
+  - slide-overflow slide 1: overflow is "visible", expected "hidden"
+  - slide-overflow slide 2: height 1192px does not match viewport 1080px
+  - slide-overflow slide 2: overflow is "visible", expected "hidden"
+  - slide-overflow slide 3: height 1192px does not match viewport 1080px
+  - slide-overflow slide 3: overflow is "visible", expected "hidden"
+  - full-spec: No .reveal elements found for progressive slide content.
+  - full-spec: No .slide.visible state found; first render can appear blank when reveal elements are hidden.
+  - full-spec: First .slide is not marked visible on initial load.
+  - full-spec: No progress bar element or runtime progress marker found.
+  - full-spec: No IntersectionObserver runtime found for .visible slide state updates.
+  - full-spec: No touch or pointer swipe support found.
+  - full-spec: No prefers-reduced-motion CSS fallback found.
+  - full-spec: Viewport meta should include maximum-scale=1.0,user-scalable=no for mobile deck stability.
+- desktop-900p:
+  - slide-overflow slide 1: height 1012px does not match viewport 900px
+  - slide-overflow slide 1: overflow is "visible", expected "hidden"
+  - slide-overflow slide 2: height 1012px does not match viewport 900px
+  - slide-overflow slide 2: overflow is "visible", expected "hidden"
+  - slide-overflow slide 3: height 1012px does not match viewport 900px
+  - slide-overflow slide 3: overflow is "visible", expected "hidden"
+  - full-spec: No .reveal elements found for progressive slide content.
+  - full-spec: No .slide.visible state found; first render can appear blank when reveal elements are hidden.
+  - full-spec: First .slide is not marked visible on initial load.
+  - full-spec: No progress bar element or runtime progress marker found.
+  - full-spec: No IntersectionObserver runtime found for .visible slide state updates.
+  - full-spec: No touch or pointer swipe support found.
+  - full-spec: No prefers-reduced-motion CSS fallback found.
+  - full-spec: Viewport meta should include maximum-scale=1.0,user-scalable=no for mobile deck stability.
+- mobile-portrait:
+  - slide-overflow slide 1: height 779px does not match viewport 667px
+  - slide-overflow slide 1: overflow is "visible", expected "hidden"
+  - slide-overflow slide 2: height 779px does not match viewport 667px
+  - slide-overflow slide 2: overflow is "visible", expected "hidden"
+  - slide-overflow slide 2: horizontal internal overflow: scrollWidth 413px > clientWidth 375px
+  - slide-overflow slide 3: height 779px does not match viewport 667px
+  - slide-overflow slide 3: overflow is "visible", expected "hidden"
+  - full-spec: No .reveal elements found for progressive slide content.
+  - full-spec: No .slide.visible state found; first render can appear blank when reveal elements are hidden.
+  - full-spec: First .slide is not marked visible on initial load.
+  - full-spec: No progress bar element or runtime progress marker found.
+  - full-spec: No IntersectionObserver runtime found for .visible slide state updates.
+  - full-spec: No touch or pointer swipe support found.
+  - full-spec: No prefers-reduced-motion CSS fallback found.
+  - full-spec: Viewport meta should include maximum-scale=1.0,user-scalable=no for mobile deck stability.
+- mobile-landscape:
+  - slide-overflow slide 1: height 526px does not match viewport 414px
+  - slide-overflow slide 1: overflow is "visible", expected "hidden"
+  - slide-overflow slide 2: height 526px does not match viewport 414px
+  - slide-overflow slide 2: overflow is "visible", expected "hidden"
+  - slide-overflow slide 3: height 526px does not match viewport 414px
+  - slide-overflow slide 3: overflow is "visible", expected "hidden"
+  - full-spec: No .reveal elements found for progressive slide content.
+  - full-spec: No .slide.visible state found; first render can appear blank when reveal elements are hidden.
+  - full-spec: First .slide is not marked visible on initial load.
+  - full-spec: No progress bar element or runtime progress marker found.
+  - full-spec: No IntersectionObserver runtime found for .visible slide state updates.
+  - full-spec: No touch or pointer swipe support found.
+  - full-spec: No prefers-reduced-motion CSS fallback found.
+  - full-spec: Viewport meta should include maximum-scale=1.0,user-scalable=no for mobile deck stability.

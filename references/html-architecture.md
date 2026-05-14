@@ -1,16 +1,14 @@
 # HTML Architecture for Presentations
 
-Every presentation must follow this structure. **Include the full mandatory base CSS from [viewport-and-base.css](viewport-and-base.css)** (or inline equivalent) so every slide fits exactly in the viewport.
+Every presentation must follow this structure. **Copy the full mandatory base CSS from [viewport-and-base.css](viewport-and-base.css) first** so every slide fits exactly in the viewport, then add preset-specific theme tokens and components.
 
 ## Document structure
 
 - `<!DOCTYPE html>`, `<html lang="en">`
 - `<head>`: charset, viewport, title, Fontshare/Google Fonts link, `<style>` with:
-  - CSS custom properties (theme colors, `--font-display`, `--font-body`, `--title-size`, `--subtitle-size`, `--body-size`, `--slide-padding`, `--content-gap`, `--ease-out-expo`, `--duration-normal`)
-  - Base: `* { margin:0; padding:0; box-sizing:border-box; }`, html/body height and overflow
-  - `.slide`: `width:100vw; height:100vh; height:100dvh; overflow:hidden; scroll-snap-align:start; display:flex; flex-direction:column; justify-content:center; position:relative; padding:var(--slide-padding);`
-  - `.slide-content`: flex:1; display:flex; flex-direction:column; justify-content:center; max-height:100%; overflow:hidden;
-  - Responsive breakpoints for max-height 600px, max-width 768px, landscape phones
+  - Full canonical base CSS copied from `references/viewport-and-base.css`
+  - Theme custom properties after the base block (colors, `--font-display`, `--font-body`, `--ease-out-expo`, `--duration-normal`, and any preset-specific overrides)
+  - Component CSS for the chosen preset
   - `.reveal` / `.slide.visible .reveal` for scroll-triggered animations; stagger with nth-child delay
 - `<body>`: optional progress bar, nav.nav-dots, then `<section class="slide">` per slide
 - Each slide: semantic content (h1/h2, p, ul, .card, img) with .reveal where needed

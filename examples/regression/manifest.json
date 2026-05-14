@@ -1,0 +1,22 @@
+{
+  "description": "Regression examples for frontend-slides Phase 4.",
+  "verify_command": "node scripts/verify_presentation.mjs <html-file>",
+  "viewports": ["1920x1080", "1440x900", "375x667", "896x414"],
+  "scenarios": [
+    {
+      "id": "mode-a-zero-sales-proposal",
+      "name": "From scratch pre-sales proposal",
+      "file": "examples/regression/zero-sales-proposal.html"
+    },
+    {
+      "id": "mode-b-pptx-converted",
+      "name": "PPTX converted to HTML",
+      "file": "examples/regression/pptx-converted.html"
+    },
+    {
+      "id": "mode-c-enhanced-existing-html",
+      "name": "Enhanced existing HTML deck",
+      "file": "examples/regression/enhanced-existing.html"
+    }
+  ]
+}
