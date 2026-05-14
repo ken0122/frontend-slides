@@ -1,42 +1,13 @@
 ---
 name: frontend-slides
-description: 创建零依赖、动画丰富的HTML演示文稿，可从零开始或通过转换PPT/PPTX文件生成。用于解决方案汇报、售前/销售方案、客户提案、Pitch Deck、教学课件、会议演讲、内部汇报。特别适合销售和售前团队。帮助非设计师通过视觉探索（"所见即所选"）而非抽象选择来发现审美偏好。
-trigger: 做PPT、生成PPT、生成演示文稿、生成胶片、创建幻灯片、HTML演示、汇报方案、解决方案PPT、pitch deck、方案汇报、PPT演示、胶片演示、演讲PPT、演讲稿、PPT转网页、pptx转html、PPT美化
-methodology: 模式检测(A/B/C)→内容采集→风格探索(3预览)→生成演示→交付
-quick_ref: |
-  三大模式:
-  - Mode A (新建): 内容采集→风格预览→生成
-  - Mode B (PPT转换): 提取→确认→选风格→生成
-  - Mode C (HTML增强): 读文件→保持视口→增强
-
-  五大风格立场:
-  - Trust & Professional: 金融/企业 (Swiss Modern, Paper & Ink)
-  - Future & Depth: 科技/产品发布 (Dark Botanical, Electric Studio)
-  - Efficiency & Speed: 数据仪表板 (Bento UI, Notebook Tabs)
-  - Care & Resonance: 人文/品牌 (Pastel Geometry, Vintage Editorial)
-  - Immersion & Expression: 创意/营销 (Neon Cyber, Creative Voltage)
-
-  核心规则:
-  - 每页=100vh,overflow:hidden,绝不滚动
-  - 间距: 8/12/16/20/24/32/40 (8点网格)
-  - 字体: clamp()响应式,最小12px,正文14-16px
-  - 配色: 主色+互补色+类似色,无随机色
-
-  关键文件:
-  - references/html-architecture.md: HTML结构
-  - references/viewport-and-base.css: 基础CSS
-  - references/animation-patterns.md: 动画模式
-  - references/ppt-extract.py: PPT提取
-  - references/image-processing.py: 图片处理
-  - references/pptx-mobile-fallback.md: 移动端PPTX生成
-  - references/gov-company-intro-template.md: 政府汇报-公司介绍12页模板
-  - STYLE_PRESETS.md: 12种预设风格
-load_priority: L2
+description: 创建或增强浏览器原生HTML演示文稿，支持从零生成、PPT/PPTX转HTML、现有HTML胶片美化；用于做PPT、生成PPT、HTML演示、演示文稿、胶片、解决方案汇报、售前/销售方案、客户提案、Pitch Deck、教学课件、会议演讲、内部汇报和PPT美化。Use for zero-build animated slide decks with 100vh responsive slides, style exploration, navigation, optional inline editing, and viewport checks.
 ---
 
 # Frontend Slides
 
 创建零依赖、动画丰富的HTML演示文稿，完全在浏览器中运行。帮助非设计师通过视觉探索发现审美偏好，然后生成生产质量的幻灯片。
+
+**跨平台元数据:** `SKILL.md` frontmatter 仅保留 AgentSkills 生态的最小公共字段 `name` 和 `description`，以最大化兼容 Codex、Claude Code、Hermes Agent、OpenClaw 等实现。Codex/OpenAI 专用展示信息放在 `agents/openai.yaml`，不要在通用 frontmatter 中加入平台私有字段。
 
 **参考文件:** 生成CSS、图片处理、PPT提取、HTML结构、编辑按钮或动画代码时，读取 `references/` 下对应文件（以及 STYLE_PRESETS.md 获取预设和CSS陷阱），确保输出正确完整。
 
@@ -46,9 +17,9 @@ load_priority: L2
 
 - **问答确认:** 一次性收集目的、页数、内容、图片、编辑需求；必要时逐步追问。
 - **文件生成:** 将最终产物保存为本地 HTML 文件，并按需创建相邻资源目录。
-- **PPT转换:** 使用 `references/ppt-extract.py` 的 `extract_pptx(user_pptx_path, output_dir)` 逻辑提取文字、图片和备注。
-- **图片处理:** 使用 `references/image-processing.py` 的 Pillow helper 处理 logo、截图和大图，处理后另存新文件。
-- **浏览器预览:** 如当前环境提供浏览器或本地预览能力，打开生成的 HTML 做视口和交互检查。
+- **PPT转换:** 运行 `scripts/extract_pptx.py input.pptx --out output_dir --json-out output_dir/slides.json --pretty` 提取文字、图片和备注；用法见 `references/ppt-extraction.md`。
+- **图片处理:** 运行 `scripts/process_image.py` 处理 logo、截图和大图，处理后另存新文件；用法见 `references/image-processing.md`。
+- **自动验证:** 生成或修改 HTML 后，优先运行 `node scripts/verify_presentation.mjs presentation.html`；用法见 `references/presentation-verification.md`。如缺 Playwright，按脚本错误提示安装后重跑。
 - **交付说明:** 回复中提供产物绝对路径、页数、风格、导航方式和可编辑方式；不要默认发布到外部服务。
 
 ---
@@ -264,7 +235,7 @@ AI/自动化产品 → Ghostly Agency + Emotional Sovereignty
 
 使用 Phase 1 内容和 Phase 2 风格。若没有图片，生成纯文字+CSS视觉。若有图片：**图片管线** — 生成前处理。
 
-**图片处理:** 详见 [references/image-processing.py](references/image-processing.py)，包含 `crop_circle`, `resize_max`, `add_padding`。依赖: `pip install Pillow`。同一图片不可重复使用（logo除外：标题页+结尾页可各放一次）；当图片与风格冲突时添加CSS边框/发光。处理后图片另存为新文件名（如 `logo_round.png`, `screenshot_processed.png`）；绝不覆盖原文件。HTML中用相对路径引用（如 `assets/logo_round.png`）。
+**图片处理:** 使用 `scripts/process_image.py`，详见 [references/image-processing.md](references/image-processing.md)。支持 `resize`, `circle`, `padding` 三种操作并输出 JSON 元数据。依赖: `python3 -m pip install Pillow`。同一图片不可重复使用（logo除外：标题页+结尾页可各放一次）；当图片与风格冲突时添加CSS边框/发光。处理后图片另存为新文件名（如 `logo_round.png`, `screenshot_processed.png`）；绝不覆盖原文件。HTML中用相对路径引用（如 `assets/logo_round.png`）。
 
 **图片CSS:** `.slide-image` max-height min(50vh, 400px); `.screenshot` border+shadow; `.logo` max-height min(30vh, 200px)。边框/阴影根据风格主色调调整。位置：标题页=logo居中；功能页=截图在侧，文字在另一侧；满版或内联根据需要。
 
@@ -282,7 +253,7 @@ AI/自动化产品 → Ghostly Agency + Emotional Sovereignty
 
 ## Phase 4: PPT转换
 
-1. **提取:** 运行 [references/ppt-extract.py](references/ppt-extract.py) 的逻辑: `extract_pptx(user_pptx_path, output_dir)`。依赖: `pip install python-pptx`。使用 output_dir 使图片保存到 `output_dir/assets/`。返回 slides_data（每页: title, content[], images[], notes）。
+1. **提取:** 运行 `python3 scripts/extract_pptx.py user.pptx --out output_dir --json-out output_dir/slides.json --pretty`。依赖: `python3 -m pip install python-pptx`。使用 output_dir 使图片保存到 `output_dir/assets/`。返回 JSON（每页: title, content[], images[], notes）。用法见 [references/ppt-extraction.md](references/ppt-extraction.md)。
 2. **确认:** 展示提取的幻灯片列表；请用户确认后进入风格选择。
 3. **选风格:** Phase 2（风格探索），结合提取的内容。
 4. **生成:** 在步骤1的同一 output_dir 中构建HTML演示文稿。转换为所选风格；保留文字、图片（从assets/引用）、幻灯片顺序、演讲者备注（作为HTML注释或单独文件）。
@@ -293,7 +264,7 @@ AI/自动化产品 → Ghostly Agency + Emotional Sovereignty
 
 1. 清理临时预览目录（如存在）。
 2. 将 HTML 保存到本地路径；若包含图片或资源，使用相邻 `assets/` 或 `[name]-assets/` 目录。
-3. 如当前环境支持浏览器预览，打开生成的 HTML，检查首屏非空、导航可用、视口无滚动、移动端断点可用。
+3. 运行 `node scripts/verify_presentation.mjs path/to/presentation.html`，覆盖 `1920x1080`, `1440x900`, `375x667`, `896x414`，检查首屏非空、每页无内部溢出、键盘/滚轮/可见导航控件交互可用。若失败，修复后重跑；若当前环境无法安装 Playwright，在交付说明中明确验证缺口。
 4. 在回复正文中写入:
    - 文件本地绝对路径
    - 风格、页数、是否包含图片/编辑能力
@@ -336,4 +307,4 @@ AI/自动化产品 → Ghostly Agency + Emotional Sovereignty
 
 **新建演示:** 用户想要pitch/解决方案 → 询问目的、长度、内容、图片、编辑 → (如有图片) 评估、大纲、确认 → 询问情绪 → 3个预览 → 用户选风格 → (如有图片) 运行Pillow操作 → 生成HTML → 交付文件。
 
-**PPT转换:** 用户有.pptx → 运行ppt-extract.py提取 → 展示提取列表确认 → Phase 2选风格 → 生成HTML → 交付。
+**PPT转换:** 用户有.pptx → 运行 `scripts/extract_pptx.py` 提取 → 展示提取列表确认 → Phase 2选风格 → 生成HTML → 交付。

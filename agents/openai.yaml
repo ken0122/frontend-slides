@@ -1,0 +1,7 @@
+interface:
+  display_name: "Frontend Slides"
+  short_description: "创建、转换和美化可交互的浏览器原生HTML演示文稿"
+  default_prompt: "Use $frontend-slides to create a polished HTML slide deck from my outline, with responsive 100vh slides and browser navigation."
+
+policy:
+  allow_implicit_invocation: true

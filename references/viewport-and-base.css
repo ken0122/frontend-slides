@@ -4,7 +4,13 @@
    They ensure slides fit exactly in the viewport.
    =========================================== */
 
-/* 1. Lock html/body to viewport */
+/* 1. Reset and lock html/body to viewport */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 html, body {
     height: 100%;
     overflow-x: hidden;
